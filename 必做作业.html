@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = 'today is a happy day';
+        var i, j, str1;
+        function change(str) {
+            var newarr, newarr1 = [];
+            newarr = str.toLowerCase().split(" ");
+            for (var i = 0; i < newarr.length; i++) {
+                newarr1.push(newarr[i][0].toUpperCase() + newarr[i].substring(1));
+            }
+            return newarr1.join(' ');
+        }
+        str1 = change(str);
+        console.log(str1);
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
