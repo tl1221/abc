@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var data = {
+            age: 18,
+            name: "liuruchao",
+            education: ["小学", "初中", "高中", "大学", undefined, null],
+            likesFood: new Set(["fish", "banana"]),
+            friends: [
+                { name: "summer", sex: "woman" },
+                { name: "daWen", sex: "woman" },
+                { name: "yang", sex: "man" }],
+            work: {
+                time: "2019",
+                project: { name: "test", obtain: ["css", "html", "js"] }
+            },
+            play: function () { console.log("玩滑板"); }
+        }
+        var obj = {};
+        function deepClone(newobj, oldobj) {
+            for (var k in oldobj) {
+                var item = oldobj[k];
+                //判断这个值是否是数组
+                if (item instanceof Array) {
+                    newobj[k] = [];
+                    deepClone(newobj[k], item)
+                } else if (item instanceof Object) {  //判断这个值是否是对象
+                    newobj[k] = {};
+                    deepClone(newobj[k], item)
+                } else {  //属于简单数据类型
+                    newobj[k] = item;
+                }
+            }
+        }
+        deepClone(obj, data);
+        console.log(obj);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
